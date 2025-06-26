@@ -1,6 +1,11 @@
 # Technical Assessment - Senior Test Analyst
 
-This assessment requires the completion of 4 different tasks given below
+## Instructions
+- As part of our hiring process, we require you to complete a technical assessment.
+- This assessment requires the completion of 4 different tasks given below. 
+- Please go through the provided repository's README, fork the repository, and then when you're done, please send me a link to your completed GitHub project.
+- Please also note, you have one week, from the date you received this link in email, to complete all the tasks and send it to me.
+_Good luck, have fun and I'm looking forward to seeing the output._
 
 ## Task #1
 ### Using Cypress, write a front end automated script, targeting https://www.harveynorman.com.au where you:
