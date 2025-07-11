@@ -4,7 +4,7 @@
 - As part of our hiring process, we require you to complete a technical assessment.
 - This assessment requires the completion of 4 different tasks given below. 
 - Please go through the provided repository's README, fork the repository, and then when you're done, please send me a link to your completed GitHub project.
-- Please also note, you have one week, from the date you received this link in email, to complete all the tasks and send it to me.
+- Please complete all the tasks and send it to me.
 _Good luck, have fun and I'm looking forward to seeing the output._
 
 ## Task #1
@@ -13,7 +13,7 @@ _Good luck, have fun and I'm looking forward to seeing the output._
   - Go to https://www.harveynorman.com.au/shokz-opencomm2-uc-usb-a-bone-conduction-stereo-bluetooth-headset.html
   - Add the product to cart
   - Validate that it is in your shopping cart
-  - Select a schedule delivery method to postcode 2077 ASQUITH and validate the total on cart page (in case schedule delivery does not show, you can use standard delivery)
+  - Select a standard delivery method to postcode 2077 ASQUITH and validate the total on cart page
 
 **Additional items:**
 This should include any checks along the way that you deem necessary.
