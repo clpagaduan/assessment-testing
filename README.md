@@ -21,6 +21,12 @@ This should include any checks along the way that you deem necessary.
 **Required Output:**
 Once complete, commit your tests, along with any instructions and create a Pull request for it back to this repo
 
+Answers:
+2025-07-14: Currently blocked on the hCaptcha on the page, preventing me to run scripts. Harvey Norman team needs to do any of the following:
+- Whitelist my IP so that I can test
+- Provide me a url of a staging/test site with the Captcha disabled
+- If the test requires me to use the production site still, I can try different workarounds or bypass the hCaptcha but this won't be easy. 
+
 ## Task #2
 ### Go to the page - https://www.harveynorman.com.au/lg-65-inch-c5-4k-oled-evo-smart-tv.html and answer the following questions
 
@@ -30,6 +36,14 @@ Once complete, commit your tests, along with any instructions and create a Pull 
   
 **Required Output:**
 Please try to attempt all the questions in Task 2.
+
+Answer:
+The request url should be GET /svc/sfapi/storeListAndDeliveryCost https://drive.google.com/file/d/1ieb5wBI0VVec7HHbKMEjBRNCSHemdckX/view?usp=sharing
+Variables include the postcode that the user has inputted (e.g. postcode: 2020)
+For the response https://drive.google.com/file/d/1h5iGPd33N_4p61kRSuDMq4oUxz7rkke2/view?usp=drive_link, data/soreListAndDeliveryCost/pickup/items I have observed the following:
+- only the first 7 stores are displayed. Flagship Store Auburn, Balgowlah, and Gordon stores are not displayed despite being in the response
+- If the stock_status is "Out of stock", the FE displays "Available soon"
+
 
 ## Task #3
 ### Go to the page - https://www.harveynorman.com.au/customer/account/create/
@@ -46,6 +60,8 @@ You are assigned the task of validating a customer registration form given above
 **Required Output:**
 Write down all possible test cases you would consider for validating this form.
 
+Answer: Please see the test cases here: https://docs.google.com/spreadsheets/d/1NMvbvqCrHoSjClZs2ZYCXyxPRb0aRLYWBgz5oGuAx_I/edit?usp=sharing
+
 ## Task #4
 ### Analyze the performance of the product listing page using browser DevTools or Lighthouse.
 
@@ -58,5 +74,25 @@ Write down all possible test cases you would consider for validating this form.
 **Required Output:**
 Screenshots or JSON report from Lighthouse.
 Brief explanation of findings and optimization suggestions.
+
+Answer:
+- I ran both Lighthouse reports in incongnito and non-incognito and found several differences:
+- Test results: https://drive.google.com/drive/folders/1E5xZCmimfIgD4wraWw5EWjsVTZ4A5euU?usp=drive_link
+
+Incognito:
+- Scored 91/100 in Performance
+Painpoints:
+- LCP Largest Contentful Paint element 1,600 ms for the element div.GelBrickPageHeaderSideMenu_sf-sideMenu_store-context__XDUrl
+- Reduce unused JavaScript Est savings of 351 KiB
+- Page prevented back/forward cache restoration. "The only actionable failure is Pages with cache-control:no-store header cannot enter back/forward cache"
+
+Non-incognito
+- Scored 65/100 in Performance
+Painpoints:
+- Reduce JavaScript execution time 2.5 s (this is also partially caused by my browser extensions, which should reflect real-world usage of actual users)
+- Minimize main-thread work 4.3 s
+- Largest Contentful Paint element 1,300 ms for the element div.GelBrickPageHeaderSideMenu_sf-sideMenu_store-context__XDUrl (same issue with Incognito)
+- Page didn't prevent back/forward cache restoration Error
+
     
 
